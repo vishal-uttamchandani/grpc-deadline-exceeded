@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package pb;
+
+import "empty.proto";
+
+service Debug {
+    rpc FetchMessages(google.protobuf.Empty) returns (stream Message){}
+}
+
+message Message {
+    int32 id = 1;
+}
